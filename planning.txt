@@ -29,10 +29,6 @@
 
 STEPS:
 
-- JavaScript to create the 4 X 4
-    - Commit - JS 4 X 4
-- JS loops over any size
-    - Commit - JS loops
 - Button, popup asking size, clearing screen, run loops
     - Commit - Button, Popup, screen clear, build grid
 - CSS styling
