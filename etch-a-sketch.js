@@ -1,6 +1,5 @@
 let size = 4;
 
-const boxes = document.querySelectorAll(".box");
 const grid = document.querySelector(".grid");
 
 for (let i = 0; i < size; i++) {
@@ -13,6 +12,8 @@ for (let i = 0; i < size; i++) {
     }
     grid.appendChild(row);
 }
+
+const boxes = document.querySelectorAll(".box");
 
 boxes.forEach(box => {
     box.addEventListener('mouseover', (event) => {
