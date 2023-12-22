@@ -29,10 +29,6 @@
 
 STEPS:
 
-- Create in HTML first, 4 X 4
-    - Commit - flexbox working HTML file with container div.
-- JavaScript to set mouseover event
-    - Commit - mouseover event working
 - JavaScript to create the 4 X 4
     - Commit - JS 4 X 4
 - JS loops over any size
