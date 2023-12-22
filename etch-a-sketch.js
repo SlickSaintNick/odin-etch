@@ -43,6 +43,7 @@ function drawGrid(size) {
         row.classList.add('row');
         for (let i = 0; i < size; i++) {
             const box = document.createElement('div')
+            box.style.opacity = 0.25;
             box.classList.add('box');
             row.appendChild(box);
         }
@@ -58,6 +59,8 @@ function handleBoxes() {
 
     boxes.forEach(box => {
         box.addEventListener('mouseleave', (event) => {
+            myOpacity = Math.min((parseFloat(event.target.style.opacity) + 0.25), 1);
+            event.target.style.opacity = `${myOpacity}`;
             event.target.style.backgroundColor = randomRGB();
         });
     });    
@@ -65,8 +68,8 @@ function handleBoxes() {
 
 
 function randomRGB() {
-    const red = Math.floor(Math.random() * 255);
-    const green = Math.floor(Math.random() * 255);
-    const blue = Math.floor(Math.random() * 255);
-    return `rgb(${red} ${green} ${blue})`;
+    const red = Math.floor(Math.random() * 40);
+    const green = 255;
+    const blue = Math.floor(Math.random() * 40);
+    return `rgb(${red} ${green} ${blue}`;
 }
