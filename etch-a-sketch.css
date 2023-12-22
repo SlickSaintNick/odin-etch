@@ -1,9 +1,13 @@
+.grid {
+    width: 800px;
+}
+
 .row {
     display: flex;
 }
 
 .box {
     aspect-ratio: 1/1;
-    background-color: green;
+    background-color: white;
     flex: 1;
 }

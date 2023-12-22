@@ -1,6 +1,6 @@
 // Initialize constants and get grid.
-const MAX_SIZE = 200;
-SKETCH_COLOR = 'red';
+const MAX_SIZE = 100;
+const SKETCH_COLOR = 'black';
 const grid = document.querySelector('.grid');
 const btnSize = document.querySelector('.btnSize');
 
@@ -57,7 +57,7 @@ function handleBoxes() {
     const boxes = document.querySelectorAll(".box");
 
     boxes.forEach(box => {
-        box.addEventListener('mouseover', (event) => {
+        box.addEventListener('mouseleave', (event) => {
             event.target.style.backgroundColor = SKETCH_COLOR;
         });
     });    
