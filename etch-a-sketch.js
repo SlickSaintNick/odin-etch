@@ -1,6 +1,5 @@
-// Initialize constants and get grid.
+// Initialize constants, get grid and Size button.
 const MAX_SIZE = 100;
-const SKETCH_COLOR = 'black';
 const grid = document.querySelector('.grid');
 const btnSize = document.querySelector('.btnSize');
 
@@ -18,6 +17,17 @@ btnSize.addEventListener('click', () => {
 });
 
 
+function getSize() {
+    // Get a number between 1 and max size from the user.
+    let n = parseInt(prompt(`Enter a number to set size of grid (max ${MAX_SIZE}): `));
+    if (n > 0 && n <= MAX_SIZE) {
+        return n;
+    } else {
+        return 0;
+    }
+}
+
+
 // Clear the grid
 function clearGrid() {
     grid.textContent = '';
@@ -25,26 +35,15 @@ function clearGrid() {
 }
 
 
-function getSize() {
-    // Get a number between 1 and max size from the user.
-    let n = parseInt(prompt(`Enter a number to set size of grid (max ${MAX_SIZE}): `));
-    if (n > 0 && n <= MAX_SIZE) {
-        return n;
-    } else {
-        return false;
-    }
-}
-
-
 function drawGrid(size) {
-    // Draw a square grid of the requested size.
+    // Draw a square grid of the requested size. Set initial opacity to 0.25.
     for (let i = 0; i < size; i++) {
         const row = document.createElement('div');
         row.classList.add('row');
         for (let i = 0; i < size; i++) {
             const box = document.createElement('div')
-            box.style.opacity = 0.25;
             box.classList.add('box');
+            box.style.opacity = 0.25;
             row.appendChild(box);
         }
         grid.appendChild(row);
@@ -61,13 +60,14 @@ function handleBoxes() {
         box.addEventListener('mouseleave', (event) => {
             myOpacity = Math.min((parseFloat(event.target.style.opacity) + 0.25), 1);
             event.target.style.opacity = `${myOpacity}`;
-            event.target.style.backgroundColor = randomRGB();
+            event.target.style.backgroundColor = randomGreen();
         });
     });    
 }
 
 
-function randomRGB() {
+function randomGreen() {
+    // Return a randomized Green color (green variation)
     const red = Math.floor(Math.random() * 40);
     const green = 255;
     const blue = Math.floor(Math.random() * 40);
