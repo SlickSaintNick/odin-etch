@@ -3,6 +3,7 @@ const MAX_SIZE = 100;
 const grid = document.querySelector('.grid');
 const btnSize = document.querySelector('.btnSize');
 
+
 // When the button is clicked, get size from user, clear and redraw the grid, 
 // and set up etch-a-sketch. If a valid size is not entered, do nothing.
 btnSize.addEventListener('click', () => {
